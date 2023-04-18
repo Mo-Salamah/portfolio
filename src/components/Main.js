@@ -3,6 +3,7 @@ import Home from '../assets/img/home.svg';
 import Sm from './Sm';
 import { greeting } from '../Name'
 import './main.css'
+import About from "./About"
 import Developer from "./Developer";
 import Designer from "./Designer";
 import Cloud from "./Cloud";
@@ -11,9 +12,11 @@ import Game from "./Game";
 import Data from "./Data";
 import Programmer from "./Programmer";
 import Robotic from "./Robotic";
+import Quote from "./Quote";
 
 class Main extends Component {
     render() {
+    let show_about='';
     let Show_Programmer='';
     let Show_dev='';
     let Show_design='';
@@ -22,6 +25,12 @@ class Main extends Component {
     let Show_mlai='';
     let Show_robotic='';
     let Show_game='';
+    let show_quote='';
+    
+    if (greeting.About) {
+      show_about = <About/>;
+    }
+
     if (greeting.Programming) {
       Show_Programmer = <Programmer/>;
     }
@@ -46,19 +55,16 @@ class Main extends Component {
     if (greeting.gamedev) {
       Show_game = <Game/>;
     }
+    if (true) {
+      show_quote = <Quote/>;
+    }
       return (
         <div>
           <div className="main">
-          <div className="text-part">
-            <div className="text">
-              <h1>{ greeting.title } </h1>
-              <p> { greeting.subTitle } </p>
-              <Sm />
-            </div>
-          </div>
-          <div className="img-part">
-            <img src={Home} alt="clip worl" />
-          </div>
+
+        
+        {show_quote}
+        {show_about}
         </div>
         <h1>What I Do?</h1>
         {Show_Programmer}

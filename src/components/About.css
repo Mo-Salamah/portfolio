@@ -1,20 +1,23 @@
 .main{
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column; /* Add this line to always stack img-part and text-part on top of each other */
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+.img-part{
+    width: 100%; /* Change width to 100% to take up full width of the container */
+}
+
 .text-part{
-    width: 40vw;
+    width: 100%; /* Change width to 100% to take up full width of the container */
     display: block;
 }
 .text-part .text{
     margin: 10%;
     margin-top: 10%;
 }
-.img-part{
-    width: 60vw;
-}
+
 @media (max-width: 768px)  {
     .main{
         flex-direction: column;
